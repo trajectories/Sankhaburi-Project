@@ -1,0 +1,28 @@
+/* Custom CSS for mobile devices */
+@media (max-width: 767px) {
+    .login-clean form {
+      width: 90%;
+      margin-top: 20px;
+    }
+  }
+  
+  /* Custom CSS for tablets */
+  @media (min-width: 768px) and (max-width: 991px) {
+    .login-clean form {
+      width: 70%;
+      margin-top: 30px;
+    }
+  }
+  
+  /* Custom CSS for desktops */
+  @media (min-width: 992px) {
+    .login-clean form {
+      width: 50%;
+      margin-top: 40px;
+    }
+  }
+  /* Center the avatar image inside this container */
+.admin-logo {
+  text-align: center;
+}
+/* Avatar image */

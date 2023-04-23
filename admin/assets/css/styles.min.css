@@ -1,0 +1,384 @@
+@font-face {
+    font-family: Catamaran;
+    src: url(../../assets/fonts/o-0IIpQoyXQa2RxT7-5r8zRAW_0.woff2) format('woff2');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0964-0965, U+0B82-0BFA, U+200C-200D, U+20B9, U+25CC
+}
+
+@font-face {
+    font-family: Catamaran;
+    src: url(../../assets/fonts/o-0IIpQoyXQa2RxT7-5r6zRAW_0.woff2) format('woff2');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+}
+
+@font-face {
+    font-family: Catamaran;
+    src: url(../../assets/fonts/o-0IIpQoyXQa2RxT7-5r5TRA.woff2) format('woff2');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+}
+
+@font-face {
+    font-family: Catamaran;
+    src: url(../../assets/fonts/o-0IIpQoyXQa2RxT7-5r8zRAW_0.woff2) format('woff2');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0964-0965, U+0B82-0BFA, U+200C-200D, U+20B9, U+25CC
+}
+
+@font-face {
+    font-family: Catamaran;
+    src: url(../../assets/fonts/o-0IIpQoyXQa2RxT7-5r6zRAW_0.woff2) format('woff2');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+}
+
+@font-face {
+    font-family: Catamaran;
+    src: url(../../assets/fonts/o-0IIpQoyXQa2RxT7-5r5TRA.woff2) format('woff2');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+}
+
+@font-face {
+    font-family: Catamaran;
+    src: url(../../assets/fonts/o-0IIpQoyXQa2RxT7-5r8zRAW_0.woff2) format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0964-0965, U+0B82-0BFA, U+200C-200D, U+20B9, U+25CC
+}
+
+@font-face {
+    font-family: Catamaran;
+    src: url(../../assets/fonts/o-0IIpQoyXQa2RxT7-5r6zRAW_0.woff2) format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+}
+
+@font-face {
+    font-family: Catamaran;
+    src: url(../../assets/fonts/o-0IIpQoyXQa2RxT7-5r5TRA.woff2) format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+}
+
+@font-face {
+    font-family: Catamaran;
+    src: url(../../assets/fonts/o-0IIpQoyXQa2RxT7-5r8zRAW_0.woff2) format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0964-0965, U+0B82-0BFA, U+200C-200D, U+20B9, U+25CC
+}
+
+@font-face {
+    font-family: Catamaran;
+    src: url(../../assets/fonts/o-0IIpQoyXQa2RxT7-5r6zRAW_0.woff2) format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+}
+
+@font-face {
+    font-family: Catamaran;
+    src: url(../../assets/fonts/o-0IIpQoyXQa2RxT7-5r5TRA.woff2) format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+}
+
+@font-face {
+    font-family: Catamaran;
+    src: url(../../assets/fonts/o-0IIpQoyXQa2RxT7-5r8zRAW_0.woff2) format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0964-0965, U+0B82-0BFA, U+200C-200D, U+20B9, U+25CC
+}
+
+@font-face {
+    font-family: Catamaran;
+    src: url(../../assets/fonts/o-0IIpQoyXQa2RxT7-5r6zRAW_0.woff2) format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+}
+
+@font-face {
+    font-family: Catamaran;
+    src: url(../../assets/fonts/o-0IIpQoyXQa2RxT7-5r5TRA.woff2) format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+}
+
+@font-face {
+    font-family: Catamaran;
+    src: url(../../assets/fonts/o-0IIpQoyXQa2RxT7-5r8zRAW_0.woff2) format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0964-0965, U+0B82-0BFA, U+200C-200D, U+20B9, U+25CC
+}
+
+@font-face {
+    font-family: Catamaran;
+    src: url(../../assets/fonts/o-0IIpQoyXQa2RxT7-5r6zRAW_0.woff2) format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+}
+
+@font-face {
+    font-family: Catamaran;
+    src: url(../../assets/fonts/o-0IIpQoyXQa2RxT7-5r5TRA.woff2) format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+}
+
+@font-face {
+    font-family: Catamaran;
+    src: url(../../assets/fonts/o-0IIpQoyXQa2RxT7-5r8zRAW_0.woff2) format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0964-0965, U+0B82-0BFA, U+200C-200D, U+20B9, U+25CC
+}
+
+@font-face {
+    font-family: Catamaran;
+    src: url(../../assets/fonts/o-0IIpQoyXQa2RxT7-5r6zRAW_0.woff2) format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+}
+
+@font-face {
+    font-family: Catamaran;
+    src: url(../../assets/fonts/o-0IIpQoyXQa2RxT7-5r5TRA.woff2) format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+}
+
+@font-face {
+    font-family: Catamaran;
+    src: url(../../assets/fonts/o-0IIpQoyXQa2RxT7-5r8zRAW_0.woff2) format('woff2');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0964-0965, U+0B82-0BFA, U+200C-200D, U+20B9, U+25CC
+}
+
+@font-face {
+    font-family: Catamaran;
+    src: url(../../assets/fonts/o-0IIpQoyXQa2RxT7-5r6zRAW_0.woff2) format('woff2');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+}
+
+@font-face {
+    font-family: Catamaran;
+    src: url(../../assets/fonts/o-0IIpQoyXQa2RxT7-5r5TRA.woff2) format('woff2');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+}
+
+@font-face {
+    font-family: Catamaran;
+    src: url(../../assets/fonts/o-0IIpQoyXQa2RxT7-5r8zRAW_0.woff2) format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0964-0965, U+0B82-0BFA, U+200C-200D, U+20B9, U+25CC
+}
+
+@font-face {
+    font-family: Catamaran;
+    src: url(../../assets/fonts/o-0IIpQoyXQa2RxT7-5r6zRAW_0.woff2) format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+}
+
+@font-face {
+    font-family: Catamaran;
+    src: url(../../assets/fonts/o-0IIpQoyXQa2RxT7-5r5TRA.woff2) format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+}
+
+@font-face {
+    font-family: Lato;
+    src: url(../../assets/fonts/S6uyw4BMUTPHjxAwXjeu.woff2) format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+}
+
+@font-face {
+    font-family: Lato;
+    src: url(../../assets/fonts/S6uyw4BMUTPHjx4wXg.woff2) format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+}
+
+@font-face {
+    font-family: Muli;
+    src: url(../../assets/fonts/7Aulp_0qiz-aVz7u3PJLcUMYOFnOkEk40eiNxw.woff2) format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB
+}
+
+@font-face {
+    font-family: Muli;
+    src: url(../../assets/fonts/7Aulp_0qiz-aVz7u3PJLcUMYOFnOkEk50eiNxw.woff2) format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+}
+
+@font-face {
+    font-family: Muli;
+    src: url(../../assets/fonts/7Aulp_0qiz-aVz7u3PJLcUMYOFnOkEk30eg.woff2) format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+}
+
+.login-clean {
+    background: #f1f7fc;
+    padding: 80px 0
+}
+
+.login-clean form {
+    max-width: 320px;
+    width: 90%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 4px;
+    color: #505e6c;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .1)
+}
+
+.login-clean .illustration {
+    text-align: center;
+    padding: 0 0 20px;
+    font-size: 100px;
+    color: #f4476b
+}
+
+.login-clean form .form-control {
+    background: #f7f9fc;
+    border: none;
+    border-bottom: 1px solid #dfe7f1;
+    border-radius: 0;
+    box-shadow: none;
+    outline: 0;
+    color: inherit;
+    text-indent: 8px;
+    height: 42px
+}
+
+.login-clean form .btn-primary {
+    background: #f4476b;
+    border: none;
+    border-radius: 4px;
+    padding: 11px;
+    box-shadow: none;
+    margin-top: 26px;
+    text-shadow: none;
+    outline: 0 !important
+}
+
+.login-clean form .btn-primary:active,
+.login-clean form .btn-primary:hover {
+    background: #eb3b60
+}
+
+.login-clean form .btn-primary:active {
+    transform: translateY(1px)
+}
+
+.login-clean form .forgot {
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    color: #6f7a85;
+    opacity: .9;
+    text-decoration: none
+}
+
+.login-clean form .forgot:active,
+.login-clean form .forgot:hover {
+    opacity: 1;
+    text-decoration: none
+}
+
+input[type=email],
+input[type=password],
+input[type=tel],
+input[type=text],
+textarea {
+    border-radius: 8px !important
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #4daade;
+    border-color: #4daade;
+    box-shadow: 0 10px 15px rgba(157, 157, 157, .4)
+}
+
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #4daade;
+    border-color: #4daade
+}
+
+#password {
+    border-radius: 8px;
+}
