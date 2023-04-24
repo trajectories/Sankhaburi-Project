@@ -6,16 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $password = $_POST["password"];
 
   // Connect to MySQL database using mysqli
-  $db_host = "localhost";
-  $db_user = "username";
-  $db_pass = "password";
-  $db_name = "database_name";
-  $conn = new mysqli($db_host, $db_user, $db_pass, $db_name);
-
-  // Check connection
-  if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-  }
+  include '../db/db.php';
 
   // Prepare and execute SQL query to check if the user exists
   $stmt = $conn->prepare("SELECT * FROM users WHERE username = ?");
@@ -44,4 +35,3 @@ $error_msg = "User does not exist";
 $stmt->close();
 $conn->close();
 }
-?>
