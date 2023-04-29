@@ -118,6 +118,10 @@ body {
   flex: 1;
   padding: 10px; /* padding to create space between columns */
 }
+.col a {
+  flex: 1;
+  padding: 15px; /* padding to create space between columns */
+}
 img {
   display: block;
   max-width: 100%;
