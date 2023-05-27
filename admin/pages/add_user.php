@@ -44,10 +44,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body class="bg-gray-100">
-<?php include 'header.php'; ?>
+    <?php include 'header.php'; ?>
     <div class="container mx-auto py-10">
         <h1 class="text-4xl font-bold text-center mb-10">เพิ่มข้อมูลผู้ใช้งาน</h1>
         <form action="" method="post" class="max-w-md mx-auto bg-white p-5 rounded shadow">
+            <div class="mb-5">
+                <label for="email" class="block mb-2 text-sm font-medium text-gray-600">Email</label>
+                <input type="email" name="email" id="email" class="w-full border border-gray-200 p-3 rounded outline-none focus:border-purple-500" required>
+            </div>
             <div class="mb-5">
                 <label for="username" class="block mb-2 text-sm font-medium text-gray-600">Username</label>
                 <input type="text" name="username" id="username" class="w-full border border-gray-200 p-3 rounded outline-none focus:border-purple-500" required>

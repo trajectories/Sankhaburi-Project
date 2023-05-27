@@ -1,18 +1,19 @@
 <?php
-
+// import ไฟล์สำหรับใช้ database
 include '../admin/db/db.php';
-$category_id = isset($_GET['category_id']) ? $_GET['category_id'] : '';
-$sql = "SELECT * FROM locations WHERE category_id = '$category_id'";
-$result = mysqli_query($db, $sql);
 
-// Pagination settings
+// ถ้ามีการส่งค่า category_id มาให้เก็บค่าไว้ในตัวแปร $category_id ถ้าไม่มีให้เก็บค่าว่างไว้
+$category_id = isset($_GET['category_id']) ? $_GET['category_id'] : '';
+
+
+// settings ปุ่มเปลี่ยนหน้า ให้แสดงหน้าละ 5
 $results_per_page = 5;
 $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
 $offset = ($current_page - 1) * $results_per_page;
 
+// ดึงข้อมูลทั้งหมดของสถานที่ที่มี category_id ตามที่ส่งมา แล้วนำไป query/ค้นหาใน database
 $sql = "SELECT * FROM locations WHERE category_id = '$category_id' LIMIT $offset, $results_per_page";
 $result = mysqli_query($db, $sql);
-
 
 // Get total number of locations for pagination
 $total_locations = mysqli_num_rows(mysqli_query($db, "SELECT * FROM locations WHERE category_id = '$category_id'"));
@@ -30,7 +31,7 @@ $total_pages = ceil($total_locations / $results_per_page);
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="../css/attraction.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
-
+  <!-- ปรับหน้าเว็บตามขนาดหน้าจอ -->
   <style>
     @media screen and (min-width: 640px) {
       .card-container {
@@ -48,28 +49,17 @@ $total_pages = ceil($total_locations / $results_per_page);
 </head>
 
 <body class="bg-black">
-  <?php require_once 'header.php'; ?>
+  <!-- ดึงไฟล์แถบเมนูมา -->
+  <?php include 'header.php'; ?>
 
   <div class="w-full h-1 bg-white mt-4"></div>
-  <script>
-    document.getElementById('burger-menu').addEventListener('click', function() {
-      var mobileMenu = document.getElementById('mobile-menu');
-
-      if (mobileMenu.classList.contains('hidden')) {
-        mobileMenu.classList.remove('hidden');
-      } else {
-        mobileMenu.classList.add('hidden');
-      }
-    });
-  </script>
-  <!-- Attraction card -->
-
+  <!--card -->
   <div class="container bg-black mx-auto px-4 py-8 rounded-lg">
     <?php
+    // ถ้ามีแถวข้อมูลให้ลูปข้อมูลแล้วแสดง
     if (mysqli_num_rows($result) > 0) {
       while ($row = mysqli_fetch_assoc($result)) {
     ?>
-
         <div v class="card-container bg-gray-800 grid grid-cols-1 gap-4 mt-8 rounded-lg p-4">
           <a href="v_full.php?id=<?= $row['id'] ?>" class="image-wrapper flex items-center justify-center w-1000">
             <img class="rounded-lg p-1 bg-black" src="../admin/uploads/<?php echo $row['img_1'] ?>" width="600" height="600">
@@ -77,6 +67,7 @@ $total_pages = ceil($total_locations / $results_per_page);
           <div class="info-wrapper bg-white p-4 shadow-md rounded-lg">
             <h1 class="text-6xl font-bold mb-2 text-center p-2">เวลาเปิด-ปิด</h1>
             <h2 class="text-2xl text-gray-600 mb-4 text-center p-2">
+              <!-- แสดงเวลาเปิด-ปิด -->
               <?php
               if ($row['open_time'] == "") {
                 echo '-';
@@ -85,7 +76,7 @@ $total_pages = ceil($total_locations / $results_per_page);
                 echo 'เปิดตลอด 24 ชั่วโมง';
               } else {
                 echo $row['open_time'] . ' น.'; ?> - <?php echo $row['close_time'] . ' น.';
-                                                  } ?>
+                                                    } ?>
             </h2>
           </div>
           <div class="p-6 bg-blue-400 col-span-2 rounded-lg">
@@ -107,13 +98,14 @@ $total_pages = ceil($total_locations / $results_per_page);
 
       <?php }
     } else { ?>
+      <!-- ถ้าไม่มีข้อมูลก็จะแสดงข้อความแบบนี้ -->
       <div class="bg-white p-4 rounded-lg">
         <h2 class="text-2xl font-bold">Attraction not found</h2>
         <p>Sorry, the attraction you are looking for could not be found.</p>
       </div>
     <?php } ?>
 
-    <!-- Pagination -->
+    <!-- ปุ่มเลือกหน้า -->
     <div class="flex justify-center mt-8">
       <ul class="flex space-x-2">
         <?php if ($current_page > 1) : ?>

@@ -1,4 +1,5 @@
 <?php
+
 // Database connection settings
 include '../db/db.php';
 $categoryId = isset($_GET['category_id']) ? $_GET['category_id'] : 1;
@@ -90,16 +91,14 @@ $result = $db->query($sql);
 
             <nav id="menu" class="mt-4 lg:block">
                 <?php
-                $sqlCategory = "SELECT * FROM category";
+                $sqlCategory = "SELECT * FROM category WHERE category_id NOT IN ('5','7','8')";
                 $resultCategory = $db->query($sqlCategory);
                 while ($categoryRow = $resultCategory->fetch_assoc()) {
-                    if (($categoryRow['category_id'] != '5') and $categoryRow['category_id'] != '7' and $categoryRow['category_id'] != '8') {
                 ?>
                         <a href="manage.php?category_id=<?= $categoryRow['category_id'] ?>" class="flex items-center px-8 py-4 text-gray-700 hover:bg-gray-200">
                             <span class="text-lg"><?= $categoryRow['name'] ?></span>
                         </a>
-                <?php }
-                } ?>
+                <?php } ?>
             </nav>
         </aside>
         <main class="flex-1 p-8 h-full">
@@ -137,6 +136,7 @@ $result = $db->query($sql);
                         } elseif (($_GET['category_id']) == '9') {
                             echo '<tr>
                             <th class="px-6 py-4 border-b border-gray-300 font-bold">Username</th>
+                            <th class="px-6 py-4 border-b border-gray-300 font-bold">Email</th>
                             <th class="px-6 py-4 border-b border-gray-300 font-bold">Actions</th>
                         </tr>';
                         } else {
@@ -190,7 +190,9 @@ $result = $db->query($sql);
                             $resultUser = $db->query($sqlUser);
                             while ($userRow = $resultUser->fetch_assoc()) {
                                 echo '<tr>
-                                    <td class="px-6 py-4 whitespace-nowrap">' . $userRow["username"] . '</td>';
+                                    <td class="px-6 py-4 whitespace-nowrap">' . $userRow["username"] . '</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">' . $userRow["email"] . '</td>';
+                                    
                                 echo '<td class="px-6 py-4 whitespace-nowrap">
                                         <div class="bordered-buttons text-2xl text-center">
                                             <a href="view_user.php?id=' . $userRow["id"] . '"><i class="icon-edit"></i></a>

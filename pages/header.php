@@ -1,3 +1,4 @@
+<!-- header -->
 <header class="bg-black shadow">
     <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
         <nav class="flex justify-between items-center">
@@ -21,42 +22,49 @@
         </nav>
         <nav class="mt-4 flex justify-end hidden lg:flex">
             <ul class="flex space-x-4">
+                <!-- ดึงข้อมูลจาก table category มาใช้เป็นเมนู -->
                 <?php
-                $sqlCategory = "SELECT * FROM category";
+                $sqlCategory = "SELECT * FROM category WHERE category_id NOT IN (5,6,7,8,9)";
                 $resultCategory = $db->query($sqlCategory);
                 $categoryRow = $resultCategory->fetch_assoc();
                 foreach ($resultCategory as $categoryRow) {
-                    if (($categoryRow['category_id'] != '5') and $categoryRow['category_id'] != '6' and $categoryRow['category_id'] != '7' and $categoryRow['category_id'] != '8' and $categoryRow['category_id'] != '9') {                ?>
-                        <a href="v_attraction.php?category_id=<?= $categoryRow['category_id'] ?>" class="text-white hover:text-indigo-500
-                <?php if ($category_id === $categoryRow['category_id']) echo ' border-b-2 border-white'; ?>">
-                            <?= $categoryRow['name'] ?>
-                        </a>
-                <?php
-                    }
-                }
                 ?>
+                    <a href="v_attraction.php?category_id=<?= $categoryRow['category_id'] ?>" class="text-white hover:text-indigo-500
+                <?php if ($category_id === $categoryRow['category_id']) echo ' border-b-2 border-white'; ?>">
+                        <?= $categoryRow['name'] ?>
+                    </a>
+                <?php } ?>
             </ul>
         </nav>
         <!-- เพิ่ม div สำหรับ burger menu -->
         <div id="mobile-menu" class="hidden lg:hidden mt-3">
             <ul class="flex flex-col space-y-4">
                 <?php
-                $sqlCategory = "SELECT * FROM category";
+                $sqlCategory = "SELECT * FROM category WHERE category_id NOT IN (5,6,7,8,9)";
                 $resultCategory = $db->query($sqlCategory);
                 $categoryRow = $resultCategory->fetch_assoc();
                 foreach ($resultCategory as $categoryRow) {
-                    if (($categoryRow['category_id'] != '5') and $categoryRow['category_id'] != '6' and $categoryRow['category_id'] != '7' and $categoryRow['category_id'] != '8' and $categoryRow['category_id'] != '9') {                ?>
-                        <a href="v_attraction.php?category_id=<?= $categoryRow['category_id'] ?>" class="text-white hover:text-indigo-500
-                <?php if ($category_id === $categoryRow['category_id']) echo ' border-b-2 border-white'; ?>">
-                            <?= $categoryRow['name'] ?>
-                        </a>
-                <?php
-                    }
-                }
                 ?>
+                    <a href="v_attraction.php?category_id=<?= $categoryRow['category_id'] ?>" class="text-white hover:text-indigo-500
+                <?php if ($category_id === $categoryRow['category_id']) echo ' border-b-2 border-white'; ?>">
+                        <?= $categoryRow['name'] ?>
+                    </a>
+                <?php } ?>
 
             </ul>
         </div>
     </div>
 
 </header>
+<!-- เปิดปิด burger menu -->
+<script>
+    document.getElementById('burger-menu').addEventListener('click', function() {
+        var mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.remove('hidden');
+        } else {
+            mobileMenu.classList.add('hidden');
+        }
+    });
+</script>

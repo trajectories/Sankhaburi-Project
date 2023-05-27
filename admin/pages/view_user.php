@@ -33,6 +33,10 @@ if ($result->num_rows > 0) {
                         <dt class="text-sm font-medium text-gray-500">Username</dt>
                         <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"><?= $row['username'] ?></dd>
                     </div>
+                    <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
+                        <dt class="text-sm font-medium text-gray-500">Email</dt>
+                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"><?= $row['email'] ?></dd>
+                    </div>
                 </dl>
             </div>
             <div class="mt-6 flex space-x-3">

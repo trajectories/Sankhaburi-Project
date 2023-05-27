@@ -27,7 +27,7 @@ if (mysqli_num_rows($result) > 0) {
 </head>
 
 <body class="bg-black">
-    <?php require_once 'header.php'; ?>
+    <?php include 'header.php'; ?>
     <div class="w-full h-1 bg-white mt-4"></div>
     <div class="container mx-auto px-4 py-8">
         <?php if ($attraction) : ?>

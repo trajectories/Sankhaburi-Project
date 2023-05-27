@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Change Password</title>
+  <title>Attraction Management</title>
   <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
 </head>
 
@@ -50,19 +50,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <?php include 'header.php'; ?>
   <div class="flex flex-col justify-center items-center min-h-screen">
     <div class="w-full sm:w-4/5 md:w-3/5 lg:w-2/5 xl:w-1/4 bg-white rounded-lg shadow-lg p-6">
-      <h2 class="text-2xl text-center font-bold mb-4">Change Password</h2>
+      <h2 class="text-2xl text-center font-bold mb-4">แก้ไขข้อมูลผู้ใช้งาน</h2>
       <form class="space-y-4" action="" method="POST">
         <div class="flex flex-col space-y-2">
-          <label class="text-gray-700 font-bold" for="new-password">New Password</label>
-          <input class="border rounded-lg py-2 px-3" type="password" id="new-password" name="new-password" required />
+          <label class="text-gray-700 font-bold" for="username">Username</label>
+          <input class="border rounded-lg py-2 px-3" type="text" id="username" name="username" required />
         </div>
         <div class="flex flex-col space-y-2">
-          <label class="text-gray-700 font-bold" for="confirm-password">Confirm Password</label>
-          <input class="border rounded-lg py-2 px-3" type="password" id="confirm-password" name="confirm-password" required />
+          <label class="text-gray-700 font-bold" for="email">Email</label>
+          <input class="border rounded-lg py-2 px-3" type="text" id="email" name="email" required />
         </div>
         <div class="flex justify-center">
           <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
-            Change Password
+            Save
           </button>
         </div>
       </form>

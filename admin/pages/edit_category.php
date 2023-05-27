@@ -8,8 +8,32 @@ $result = $db->query($sql);
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
 } else {
-    header("Location: ../../404.html");
+    header("Location: ../../404.php");
 }
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $id = $_POST['id'];
+    $name = $_POST['name'];
+    $category_id = $_POST['category_id'];
+    // Query for updating data in the database
+    $sql = "UPDATE category SET name=?, category_id=? WHERE id=?";
+    $stmt = $db->prepare($sql);
+    $stmt->bind_param("ssi", $name, $category_id, $id);
+
+    if ($stmt->execute()) {
+        // Successfully updated the record
+        echo '<script>alert("Data updated successfully.");</script>';
+        echo '<script>window.location.href = "../pages/view_category.php?id=' . $id . '";</script>';
+        exit;
+    } else {
+        // Handle database update error
+        echo '<script>alert("Error updating data.");</script>';
+        echo '<script>window.location.href = "../pages/edit_category.php?id=' . $id . '";</script>';
+        exit;
+    }
+    $stmt->close();
+}
+
 ?>
 
 
@@ -25,10 +49,10 @@ if ($result->num_rows > 0) {
 </head>
 
 <body class="bg-gray-100">
-<?php include 'header.php'; ?>
+    <?php include 'header.php'; ?>
     <div class="container mx-auto py-10">
         <h1 class="text-4xl font-bold text-center mb-10">แก้ไขข้อมูลประเภทสถานที่</h1>
-        <form method="POST" action="../services/update_category.php" class="max-w-md mx-auto bg-white p-5 rounded shadow">
+        <form method="POST" action="" class="max-w-md mx-auto bg-white p-5 rounded shadow">
             <input type="text" name="id" value="<?= $row['id'] ?>" hidden>
             <div class="mb-5">
                 <label for="name" class="block mb-2 text-sm font-medium text-gray-600">ชื่อประเภท</label>
@@ -36,18 +60,7 @@ if ($result->num_rows > 0) {
             </div>
             <div class="mb-5">
                 <label for="description" class="block mb-2 text-sm font-medium text-gray-600">หมายเลขประเภท</label>
-                <select name="category_id" class="w-full border border-gray-200 p-3 rounded outline-none focus:border-purple-500">
-                    <?php
-                    echo '<option value="' . $row['category_id'] . '" selected>' . $row['category_id'] . '</option>';
-                    $categorySql = "SELECT category_id, name FROM category";
-                    $categoryResult = $db->query($categorySql);
-                    while ($categoryRow = $categoryResult->fetch_assoc()) {
-                        if ($categoryRow['category_id'] != $row['category_id']) {
-                            echo '<option value="' . $categoryRow['category_id'] . '">' . $categoryRow['category_id'] . '</option>';
-                        }
-                    }
-                    ?>
-                </select>
+                <input type="text" value="<?= $row['category_id'] ?>" name="category_id" id="category_id" class="w-full border border-gray-200 p-3 rounded outline-none focus:border-purple-500" required>
             </div>
             <button type="submit" class="w-full py-2 bg-purple-600 text-white font-bold rounded hover:bg-purple-700">ยืนยัน</button>
         </form>
