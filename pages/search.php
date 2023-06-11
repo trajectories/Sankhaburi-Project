@@ -6,7 +6,7 @@ include '../admin/db/db.php';
 $search = isset($_GET['search']) ? $_GET['search'] : '';
 // เอาค่า search มาหาใน database
 $sql = "SELECT * FROM locations WHERE name like '%$search%'";
-$result = mysqli_query($db, $sql);
+$result = $db->query($sql);
 
 ?>
 <!DOCTYPE html>
@@ -35,7 +35,7 @@ $result = mysqli_query($db, $sql);
   <div class="container bg-black mx-auto px-4 py-8 rounded-lg">
     <?php
     if (mysqli_num_rows($result) > 0) {
-      while ($row = mysqli_fetch_assoc($result)) {
+      while ($row = $result->fetch_assoc()) {
     ?>
         <div v class="card-container bg-gray-800 grid grid-cols-1 gap-4 mt-8 rounded-lg p-4">
           <a href="v_full.php?id=<?= $row['id'] ?>" class="image-wrapper flex items-center justify-center w-1000">

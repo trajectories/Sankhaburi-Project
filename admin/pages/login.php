@@ -1,5 +1,6 @@
 <?php
 // Connect to MySQL database using mysqli
+session_start();
 include '../db/db.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $username = $_POST["username"];
@@ -16,7 +17,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $row = $result->fetch_assoc();
     if (password_verify($password, $row["password"])) {
       $_SESSION["user_id"] = $row["id"];
-      $_SESSION["username"] = $row["username"];
       echo '<script>alert("Login successful");</script>';
       echo '<script>window.location.href = "manage.php?category_id=1";</script>';
       exit();

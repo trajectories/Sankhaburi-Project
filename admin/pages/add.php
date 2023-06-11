@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    echo '<script>alert("Please login.");</script>';
+    echo '<script>window.location.href = "login.php";</script>';
+}
 include '../db/db.php';
 $categoryId = isset($_GET['category_id']) ? $_GET['category_id'] : 1;
 
@@ -103,7 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
             <div class="mb-5">
                 <label for="tel" class="block mb-2 text-sm font-medium text-gray-600">เบอร์โทรติดต่อ</label>
-                <input type="text" name="tel" pattern="0\d{8,9}" title="กรุณาใส่หมายเลขให้ถูกต้อง (ตัวอย่าง. 0812345678)" class="w-full border border-gray-200 p-3 rounded outline-none focus:border-purple-500" required>
+                <input type="text" name="tel" pattern="0\d{8,9}" title="กรุณาใส่หมายเลขให้ถูกต้อง (ตัวอย่าง. 0812345678)" class="w-full border border-gray-200 p-3 rounded outline-none focus:border-purple-500">
             </div>
             <div class="mb-5">
                 <label for="open_time" class="block mb-2 text-sm font-medium text-gray-600">เวลาเปิด</label>

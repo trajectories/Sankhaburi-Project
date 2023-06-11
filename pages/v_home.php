@@ -31,7 +31,7 @@
         <?php
         // ดึงข้อมูล ชื่อประเภท กับ หมายเลขไอดีประเภท จากตาราง category มาใช้เป็นปุ่มประเภทสถานที่
         include '../admin/db/db.php';
-        $sqlCategory = "SELECT * FROM category WHERE category_id NOT IN (5,6,7,8,9)";
+        $sqlCategory = "SELECT * FROM category WHERE category_id IN (5,6,7,8,9)";
         $resultCategory = $db->query($sqlCategory);
         $categoryRow = $resultCategory->fetch_assoc();
         foreach ($resultCategory as $categoryRow) {

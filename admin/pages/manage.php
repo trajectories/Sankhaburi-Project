@@ -1,6 +1,11 @@
 <?php
 
 // Database connection settings
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    echo '<script>alert("Please login.");</script>';
+    echo '<script>window.location.href = "login.php";</script>';
+}
 include '../db/db.php';
 $categoryId = isset($_GET['category_id']) ? $_GET['category_id'] : 1;
 // Pagination settings
@@ -73,8 +78,6 @@ $result = $db->query($sql);
             border-radius: 0.25rem;
             margin-bottom: 1rem;
         }
-
-        
     </style>
     <div class="flex flex-col lg:flex-row h-screen bg-gray-100">
         <aside class="bg-white w-full lg:w-64 shadow-lg">
@@ -95,9 +98,9 @@ $result = $db->query($sql);
                 $resultCategory = $db->query($sqlCategory);
                 while ($categoryRow = $resultCategory->fetch_assoc()) {
                 ?>
-                        <a href="manage.php?category_id=<?= $categoryRow['category_id'] ?>" class="flex items-center px-8 py-4 text-gray-700 hover:bg-gray-200">
-                            <span class="text-lg"><?= $categoryRow['name'] ?></span>
-                        </a>
+                    <a href="manage.php?category_id=<?= $categoryRow['category_id'] ?>" class="flex items-center px-8 py-4 text-gray-700 hover:bg-gray-200">
+                        <span class="text-lg"><?= $categoryRow['name'] ?></span>
+                    </a>
                 <?php } ?>
             </nav>
         </aside>
@@ -192,7 +195,7 @@ $result = $db->query($sql);
                                 echo '<tr>
                                     <td class="px-6 py-4 whitespace-nowrap">' . $userRow["username"] . '</td>
                                     <td class="px-6 py-4 whitespace-nowrap">' . $userRow["email"] . '</td>';
-                                    
+
                                 echo '<td class="px-6 py-4 whitespace-nowrap">
                                         <div class="bordered-buttons text-2xl text-center">
                                             <a href="view_user.php?id=' . $userRow["id"] . '"><i class="icon-edit"></i></a>
@@ -242,17 +245,7 @@ $result = $db->query($sql);
             </div>
         </main>
     </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            // Show the menu when the page is loaded
-            $("#menu").show();
-
-            $("#menu-toggle").click(function() {
-                $("#menu").toggle();
-            });
-        });
-    </script>
+    
 </body>
 
 </html>

@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    echo '<script>alert("Please login.");</script>';
+    echo '<script>window.location.href = "login.php";</script>';
+}
 include '../db/db.php';
 $id = $_GET['id'];
 $sql = "SELECT * FROM category WHERE id = '$id'";

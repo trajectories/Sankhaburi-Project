@@ -13,10 +13,10 @@ $offset = ($current_page - 1) * $results_per_page;
 
 // ดึงข้อมูลทั้งหมดของสถานที่ที่มี category_id ตามที่ส่งมา แล้วนำไป query/ค้นหาใน database
 $sql = "SELECT * FROM locations WHERE category_id = '$category_id' LIMIT $offset, $results_per_page";
-$result = mysqli_query($db, $sql);
+$result = $db->query($sql);
 
 // Get total number of locations for pagination
-$total_locations = mysqli_num_rows(mysqli_query($db, "SELECT * FROM locations WHERE category_id = '$category_id'"));
+$total_locations = mysqli_num_rows($db->query("SELECT * FROM locations WHERE category_id = '$category_id'"));
 $total_pages = ceil($total_locations / $results_per_page);
 ?>
 
@@ -58,7 +58,7 @@ $total_pages = ceil($total_locations / $results_per_page);
     <?php
     // ถ้ามีแถวข้อมูลให้ลูปข้อมูลแล้วแสดง
     if (mysqli_num_rows($result) > 0) {
-      while ($row = mysqli_fetch_assoc($result)) {
+      while ($row = $result->fetch_assoc()) {
     ?>
         <div v class="card-container bg-gray-800 grid grid-cols-1 gap-4 mt-8 rounded-lg p-4">
           <a href="v_full.php?id=<?= $row['id'] ?>" class="image-wrapper flex items-center justify-center w-1000">

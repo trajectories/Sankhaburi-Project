@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    echo '<script>alert("Please login.");</script>';
+    echo '<script>window.location.href = "login.php";</script>';
+}
 include '../db/db.php';
 
 $id = $_GET['id'];
@@ -31,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo '<script>window.location.href = "../pages/edit_category.php?id=' . $id . '";</script>';
         exit;
     }
-    $stmt->close();
+    
 }
 
 ?>

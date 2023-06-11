@@ -4,5 +4,8 @@ if (isset($_GET['map'])) {
   $map = $_GET['map'];
   header("Location: $map");
   exit;
+}else{
+  header("Location: ../404.php");
+  exit;
 }
 ?>

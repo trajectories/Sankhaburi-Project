@@ -5,11 +5,14 @@ $attraction_id = isset($_GET['id']) ? $_GET['id'] : '';
 
 // Retrieve attraction details from the database based on the ID
 $sql = "SELECT * FROM locations WHERE id = '$attraction_id'";
-$result = mysqli_query($db, $sql);
+$result = $db->query($sql);
 
 // Check if the attraction exists
 if (mysqli_num_rows($result) > 0) {
     $attraction = mysqli_fetch_assoc($result);
+    // echo '<pre>';
+    // print_r(var_dump($attraction));
+    // echo '</pre>';
 } else {
     $attraction = false;
 }
@@ -48,9 +51,9 @@ if (mysqli_num_rows($result) > 0) {
                         echo 'เปิดตลอด 24 ชั่วโมง';
                     } else {
                         echo $attraction['open_time'] . ' น.'; ?> - <?php echo $attraction['close_time'] . ' น.';
-                                                            }
+                                                                }
 
-                                                                ?>
+                                                                    ?>
                 </p>
                 <p class="text-white mb-2">เบอร์โทรติดต่อ: <?php echo $attraction['tel']; ?></p>
                 <p class="text-white">สถานที่ตั้ง: <?php echo $attraction['location']; ?></p>

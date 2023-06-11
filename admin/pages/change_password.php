@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+  echo '<script>alert("Please login.");</script>';
+  echo '<script>window.location.href = "login.php";</script>';
+}
 include '../db/db.php';
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $id = $_GET['id'];
@@ -20,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   if (password_verify($newPassword, $currentHashedPassword)) {
     echo '<script>alert("New password cannot be the same as the current password.");</script>';
   } else {
-    
+
     // Update the password
     $updateQuery = "UPDATE user SET password='$hashedPassword' WHERE id=$id";
     if ($db->query($updateQuery) === TRUE) {
@@ -47,27 +52,22 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 </head>
 
 <body class="bg-gray-200">
-<?php include 'header.php'; ?>
-  <div class="flex flex-col justify-center items-center min-h-screen">
-    <div class="w-full sm:w-4/5 md:w-3/5 lg:w-2/5 xl:w-1/4 bg-white rounded-lg shadow-lg p-6">
-      <h2 class="text-2xl text-center font-bold mb-4">Change Password</h2>
-      <form class="space-y-4" action="" method="POST">
-        <div class="flex flex-col space-y-2">
-          <label class="text-gray-700 font-bold" for="new-password">New Password</label>
-          <input class="border rounded-lg py-2 px-3" type="password" id="new-password" name="new-password" required />
-        </div>
-        <div class="flex flex-col space-y-2">
-          <label class="text-gray-700 font-bold" for="confirm-password">Confirm Password</label>
-          <input class="border rounded-lg py-2 px-3" type="password" id="confirm-password" name="confirm-password" required />
-        </div>
-        <div class="flex justify-center">
-          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
-            Change Password
-          </button>
-        </div>
-      </form>
-    </div>
+  <?php include 'header.php'; ?>
+  <div class="container mx-auto py-10">
+    <h1 class="text-4xl font-bold text-center mb-10">Change Password</h1>
+    <form action="" method="post" class="max-w-md mx-auto bg-white p-5 rounded shadow">
+      <div class="mb-5">
+        <label for="new-password" class="block mb-2 text-sm font-medium text-gray-600">New Password</label>
+        <input type="password" name="new-password" id="new-password" class="w-full border border-gray-200 p-3 rounded outline-none focus:border-purple-500" required>
+      </div>
+      <div class="mb-5">
+        <label for="confirm-password" class="block mb-2 text-sm font-medium text-gray-600">Confirm Password</label>
+        <input type="password" name="confirm-password" id="confirm-password" class="w-full border border-gray-200 p-3 rounded outline-none focus:border-purple-500" required>
+      </div>
+      <button type="submit" class="w-full py-2 bg-purple-600 text-white font-bold rounded hover:bg-purple-700">Change Password</button>
+    </form>
   </div>
+  
 </body>
 
 </html>

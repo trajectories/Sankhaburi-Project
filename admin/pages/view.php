@@ -1,5 +1,9 @@
 <?php
-
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    echo '<script>alert("Please login.");</script>';
+    echo '<script>window.location.href = "login.php";</script>';
+}
 include '../db/db.php';
 $id = $_GET['id'];
 $sql = "SELECT l.id, l.name, l.description, l.short_description, l.img_1, l.location, l.map, l.tel, l.open_time, l.close_time, l.website, c.name as category_name FROM locations as l
