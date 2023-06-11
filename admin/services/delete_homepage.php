@@ -5,7 +5,7 @@ $id = $_GET['id'];
 
 if(isset($id)) {
     // Get the filename of the image associated with the data being deleted
-    $stmt = $db->prepare("SELECT img_1 FROM locations WHERE id = ?");
+    $stmt = $db->prepare("SELECT image FROM homepage WHERE id = ?");
     $stmt->bind_param("i", $id);
     $stmt->execute();
     $stmt->bind_result($image);
@@ -14,12 +14,13 @@ if(isset($id)) {
 
     // Delete the image file
     if (!empty($image)) {
-        if (file_exists($image)) {
-            unlink($image);
+        $imageFile = str_replace( '/admin', '', $image);
+        if (file_exists($imageFile)) {
+            unlink($imageFile);
         }
     }
     // Delete the data from the database
-    $stmt = $db->prepare("DELETE FROM locations WHERE id = ?");
+    $stmt = $db->prepare("DELETE FROM homepage WHERE id = ?");
     $stmt->bind_param("i", $id);
 
     if ($stmt->execute()) {

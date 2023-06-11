@@ -12,13 +12,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	// Validate form data
 	if (empty($email) || empty($password) || empty($confirm_password)) {
-		$_SESSION['error'] = 'All fields are required';
-		header('Location: forget_password.html');
-		exit();
+		echo '<script>alert("โปรดกรอกข้อมูลให้ครบถ้วน.");</script>';
+		echo '<script>window.location.href = "../pages/forget.php";</script>';
+		
 	} elseif ($password != $confirm_password) {
-		$_SESSION['error'] = 'Passwords do not match';
-		header('Location: forget_password.html');
-		exit();
+		echo '<script>alert("โปรดกรอกข้อมูลให้ครบถ้วน.");</script>';
+		echo '<script>window.location.href = "../pages/forget.php";</script>';
+		
 	} else {
 		// Check if the email exists in the database
 		$stmt = $db->prepare('SELECT * FROM user WHERE email = ?');
@@ -26,18 +26,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$stmt->execute();
 		$result = $stmt->get_result();
 		if ($result->num_rows == 0) {
-			$_SESSION['error'] = 'Email not found';
-			header('Location: forget_password.html');
-			exit();
+			echo '<script>alert("Email not found.");</script>';
+			echo '<script>window.location.href = "../pages/forget.php";</script>';
+			
 		} else {
 			// Update the password in the database
 			$stmt = $db->prepare('UPDATE user SET password = ? WHERE email = ?');
 			$hashed_password = password_hash($password, PASSWORD_DEFAULT);
 			$stmt->bind_param('ss', $hashed_password, $email);
 			$stmt->execute();
-			$_SESSION['success'] = 'Password updated successfully';
-			header('Location: login.php');
-			exit();
+			echo '<script>alert("Password updated successfully.");</script>';
+			echo '<script>window.location.href = "../pages/login.php";</script>';
+			
 		}
 	}
 }

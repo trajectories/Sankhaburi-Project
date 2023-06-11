@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <label for="description" class="block mb-2 text-sm font-medium text-gray-600">หมายเลขประเภท</label>
                 <input type="text" name="category_id" id="category_id" class="w-full border border-gray-200 p-3 rounded outline-none focus:border-purple-500" required>
             </div>
-            <button type="submit" class="w-full py-2 bg-purple-600 text-white font-bold rounded hover:bg-purple-700">Add Attraction</button>
+            <button type="submit" class="w-full py-2 bg-purple-600 text-white font-bold rounded hover:bg-purple-700">เพิ่มข้อมูล</button>
         </form>
     </div>
 </body>

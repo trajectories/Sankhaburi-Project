@@ -31,7 +31,7 @@
         <?php
         // ดึงข้อมูล ชื่อประเภท กับ หมายเลขไอดีประเภท จากตาราง category มาใช้เป็นปุ่มประเภทสถานที่
         include '../admin/db/db.php';
-        $sqlCategory = "SELECT * FROM category WHERE category_id IN (5,6,7,8,9)";
+        $sqlCategory = "SELECT * FROM category WHERE category_id IN (1,2,3,4)"; 
         $resultCategory = $db->query($sqlCategory);
         $categoryRow = $resultCategory->fetch_assoc();
         foreach ($resultCategory as $categoryRow) {
@@ -47,17 +47,24 @@
     </div>
     <!-- Middle column -->
     <div class="column flex-1 sm:w-1/2 md:w-1/3 lg:w-1/4 mx-0.5 p-8 bg-white text-black rounded-lg shadow-lg">
-      <img src="https://png.pngtree.com/png-clipart/20220303/original/pngtree-action-cartoon-cute-godzilla-character-avatar-png-image_7400326.png" alt="Image description" class="w-full h-auto mb-4 rounded-lg" />
-      <h2 class="text-2xl mb-2">Image Title</h2>
-      <p class="text-base mb-4">Image description or caption goes here.</p>
+      <?php
+      $sqlHomepage = "SELECT * FROM homepage WHERE image_no = 1";
+      $resultHomepage = $db->query($sqlHomepage);
+      $homepageRow = $resultHomepage->fetch_assoc();
+      ?>
+      <img src="<?php echo $homepageRow['image']; ?>" alt="Image description" class="w-full h-auto mb-4 rounded-lg" />
+      <p class="text-base mb-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $homepageRow['description']; ?></p>
     </div>
     <!-- Right column -->
+    <?php
+    $sqlHomepage = "SELECT * FROM homepage WHERE image_no = 2";
+    $resultHomepage = $db->query($sqlHomepage);
+    $homepageRow = $resultHomepage->fetch_assoc();
+    ?>
     <div class="column flex-1 sm:w-1/2 md:w-1/3 lg:w-1/4 mx-0.5 p-8 bg-white text-black rounded-lg shadow-lg">
-      <img src="https://png.pngtree.com/png-clipart/20210314/original/pngtree-cute-cartoon-characters-png-image_6103978.jpg" alt="Image description" class="w-full h-auto mb-4 rounded-lg" />
-      <h2 class="text-2xl mb-2">Image Title</h2>
-      <p class="text-base mb-4">Image description or caption goes here.</p>
+      <img src="<?php echo $homepageRow['image']; ?>" alt="Image description" class="w-full h-auto mb-4 rounded-lg" />
+      <p class="text-base mb-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $homepageRow['description']; ?></p>
     </div>
-
   </div>
 </body>
 

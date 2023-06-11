@@ -29,6 +29,7 @@ if ($result->num_rows > 0) {
 
 <body class="bg-gray-100">
     <?php include 'header.php'; ?>
+    
     <div class="max-w-4xl mx-auto py-6 sm:px-6 lg:px-8">
         <div class="px-4 py-6 sm:px-0">
             <h1 class="text-2xl font-semibold text-gray-900">รายละเอียดข้อมูลสถานที่ : <?= $row['name'] ?></h1>
@@ -57,7 +58,7 @@ if ($result->num_rows > 0) {
                             <?php if ($row['img_1'] == "") { ?>
                                 <img src="../assets/imgs/image-not-found.png" class="rounded-lg" width="400" height="400">
                             <?php } else { ?>
-                                <img src="../uploads/<?= $row['img_1'] ?>" class="rounded-lg" width="400" height="400">
+                                <img src="<?= $row['img_1'] ?>" class="rounded-lg" width="400" height="400">
                             <?php } ?>
                         </dd>
                     </div>

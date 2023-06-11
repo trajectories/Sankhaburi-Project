@@ -35,12 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $imgFile = $_FILES['image1']['tmp_name'];
         $imgName = $_FILES['image1']['name'];
 
-        // Generate a UUID for the image file name
-        $uuid = uniqid();
-        $fileExtension = pathinfo($imgName, PATHINFO_EXTENSION);
-        $newFileName = 'i-' . $uuid . '-' . $fileExtension;
-
-        $imgPath = '../uploads/' . $newFileName;
+        $imgPath = '../uploads/' . $imgName;
 
         // Move the uploaded image to the destination folder
         move_uploaded_file($imgFile, $imgPath);
@@ -87,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="px-4 py-6 sm:px-0">
             <h1 class="text-2xl font-semibold text-gray-900">รายละเอียดข้อมูลสถานที่ท่องเที่ยว : <?= $row['name'] ?></h1>
             <!-- <?php echo var_dump($row); ?> -->
-            <form method="POST" action="../services/update.php" enctype="multipart/form-data">
+            <form method="POST" action="" enctype="multipart/form-data">
                 <div class="mt-5 border-t border-gray-200">
                     <dl class="sm:divide-y sm:divide-gray-200">
                         <!-- Example for one field -->

@@ -56,12 +56,19 @@
     $sqlCategory = "SELECT * FROM category";
     $resultCategory = $db->query($sqlCategory);
     while ($categoryRow = $resultCategory->fetch_assoc()) {
-        if (($categoryRow['category_id'] != '5') and $categoryRow['category_id'] != '7' and $categoryRow['category_id'] != '8') {
     ?>
-            <a href="manage.php?category_id=<?= $categoryRow['category_id'] ?>" class="flex items-center px-8 py-4 text-gray-700 hover:bg-gray-200">
-                <span class="text-lg"><?= $categoryRow['name'] ?></span>
-            </a>
+        <a href="manage.php?category_id=<?= $categoryRow['category_id'] ?>" class="flex items-center px-8 py-4 text-gray-700 hover:bg-gray-200">
+            <span class="text-lg"><?= $categoryRow['name'] ?></span>
+        </a>
     <?php }
-    } ?>
+    ?>
 </nav>
 </aside>
+<script>
+    const menuToggle = document.querySelector('#menu-toggle');
+    const menu = document.querySelector('#menu');
+
+    menuToggle.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+    })
+</script>

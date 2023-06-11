@@ -122,7 +122,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <label for="website" class="block mb-2 text-sm font-medium text-gray-600">เว็บไซต์</label>
                 <input type="text" name="website" id="open_time" class="w-full border border-gray-200 p-3 rounded outline-none focus:border-purple-500">
             </div>
-            <button type="submit" class="w-full py-2 bg-purple-600 text-white font-bold rounded hover:bg-purple-700">Add Attraction</button>
+            <button type="submit" class="w-full py-2 bg-purple-600 text-white font-bold rounded hover:bg-purple-700">เพิ่มข้อมูล</button>
         </form>
     </div>
 </body>
