@@ -2,7 +2,7 @@
 <header class="bg-black shadow">
     <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
         <nav class="flex justify-between items-center">
-            <a href="v_attraction.php?category_id=1">
+            <a href="v_home.php">
                 <h1 class="text-5xl mt-5 font-semibold text-white">จังหวัดชัยนาท</h1>
             </a>
             <div class="flex mt-7">
